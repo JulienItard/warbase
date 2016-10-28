@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :ranks
-  resources :soldiers
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :soldiers do 
+    resources :promotions
+  end
+    
 end
