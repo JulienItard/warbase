@@ -1,19 +1,41 @@
 <p id="notice"><%= notice %></p>
 
+<h3>Informations</h3>
 <p>
-  <strong>Lastname:</strong>
+  <strong>Nom de famille :</strong>
   <%= @soldier.lastname %>
 </p>
 
 <p>
-  <strong>Firstname:</strong>
+  <strong>Prénom(s):</strong>
   <%= @soldier.firstname %>
 </p>
 
 <p>
-  <strong>Day of birth:</strong>
-  <%= @soldier.day_of_birth %>
+  <strong>Date de naissance :</strong>
+  <%= @soldier.date_of_birth %>
 </p>
 
-<%= link_to 'Edit', edit_soldier_path(@soldier) %> |
-<%= link_to 'Back', soldiers_path %>
+<p>
+  <strong>Lieu de naissance :</strong>
+  <%= @soldier.place_of_birth %>
+</p>
+
+<p>
+  <strong>Date de décès :</strong>
+  <%= @soldier.date_of_death %>
+</p>
+
+<p>
+  <strong>Lieu de décès :</strong>
+  <%= @soldier.place_of_death %>
+</p>
+
+<h3>Grades</h3>
+
+<%= render '/promotions/index', promotions: @soldier.promotions %>
+
+<%= link_to 'Ajouter un grade', new_soldier_promotion_path(@soldier) %> |
+
+<%= link_to 'Modifier', edit_soldier_path(@soldier) %> |
+<%= link_to 'Retour', soldiers_path %>

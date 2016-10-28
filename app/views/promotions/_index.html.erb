@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Grade</th>
+      <th>Date</th>
+      <th>Temporaire</th>
+      <th colspan="2">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% promotions.each do |promotion| %>
+      <tr>
+        <td><%= promotion.rank.name %></td>
+        <td><%= l promotion.date %></td>
+        <td><% if promotion.temporary %>Temporaire <% else %> - <% end %></td>
+        <td><%= link_to 'Modifier', edit_soldier_promotion_path(@soldier, promotion) %></td>
+        <td><%= link_to 'Supprimer', [@soldier, promotion], method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

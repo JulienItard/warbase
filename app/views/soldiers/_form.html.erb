@@ -12,21 +12,36 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :lastname %>
+    <%= f.label :lastname, 'Nom de famille :' %>
     <%= f.text_field :lastname %>
   </div>
 
   <div class="field">
-    <%= f.label :firstname %>
+    <%= f.label :firstname, 'Prénom(s) :' %>
     <%= f.text_field :firstname %>
   </div>
 
   <div class="field">
-    <%= f.label :day_of_birth %>
-    <%= f.date_select :day_of_birth %>
+    <%= f.label :date_of_birth, 'Date de naissance :' %>
+    <%= f.date_select :date_of_birth, start_year: 1880, end_year: 1940 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :place_of_birth, 'Lieu de naissance :' %>
+    <%= f.text_field :place_of_birth %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_of_death, 'Date de décès :' %>
+    <%= f.date_select :date_of_death, start_year: 1930, end_year: 1950 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :place_of_death, 'Lieu de décès :' %>
+    <%= f.text_field :place_of_death %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Sauvegarder' %>
   </div>
 <% end %>

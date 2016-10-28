@@ -1,28 +1,20 @@
 class SoldiersController < ApplicationController
   before_action :set_soldier, only: [:show, :edit, :update, :destroy]
 
-  # GET /soldiers
-  # GET /soldiers.json
   def index
     @soldiers = Soldier.all
   end
 
-  # GET /soldiers/1
-  # GET /soldiers/1.json
   def show
   end
 
-  # GET /soldiers/new
   def new
     @soldier = Soldier.new
   end
 
-  # GET /soldiers/1/edit
   def edit
   end
 
-  # POST /soldiers
-  # POST /soldiers.json
   def create
     @soldier = Soldier.new(soldier_params)
 
@@ -37,8 +29,6 @@ class SoldiersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /soldiers/1
-  # PATCH/PUT /soldiers/1.json
   def update
     respond_to do |format|
       if @soldier.update(soldier_params)
@@ -51,8 +41,6 @@ class SoldiersController < ApplicationController
     end
   end
 
-  # DELETE /soldiers/1
-  # DELETE /soldiers/1.json
   def destroy
     @soldier.destroy
     respond_to do |format|
@@ -62,13 +50,12 @@ class SoldiersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_soldier
       @soldier = Soldier.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def soldier_params
-      params.require(:soldier).permit(:lastname, :firstname, :day_of_birth)
+      params.require(:soldier).permit(:lastname, :firstname, :date_of_birth, :place_of_birth, :date_of_death, :place_of_death)
     end
 end

@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20161028102636) do
   create_table "soldiers", force: :cascade do |t|
     t.string   "lastname"
     t.string   "firstname"
-    t.date     "day_of_birth"
+    t.date     "date_of_birth"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "place_of_birth"

@@ -4,3 +4,4 @@
 #   http_host: 'example.org',
 #   https: false
 # )
+I18n.default_locale = :fr
