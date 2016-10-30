@@ -1,37 +1,47 @@
-<p id="notice"><%= notice %></p>
+<% content_for :headTitle do %>
+  Soldats
+<% end %>
 
-<h1>Soldats</h1>
+<% content_for :contentHeader do %>
+  <h2>Soldats <small>index</small></h2>
+  
+  <ol class="breadcrumb">
+    <li><a href="#">Accueil</a></li>
+    <li><%= link_to 'Soldats', soldiers_path %></li>
+    <li class="active">index</li>
+  </ol>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Prénom(s)</th>
-      <th>Date de naissance</th>
-      <th>Lieu de naissance</th>
-      <th>Date de décès</th>
-      <th>Lieu de décès</th>
-      <th colspan="3">Actions</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @soldiers.each do |soldier| %>
+<div class="box">
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= soldier.lastname %></td>
-        <td><%= soldier.firstname %></td>
-        <td><%= l soldier.date_of_birth %></td>
-        <td><%= soldier.place_of_birth %></td>
-        <td><%= l soldier.date_of_death %></td>
-        <td><%= soldier.place_of_death %></td>
-        <td><%= link_to 'Voir', soldier %></td>
-        <td><%= link_to 'Modifier', edit_soldier_path(soldier) %></td>
-        <td><%= link_to 'Supprimer', soldier, method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %></td>
+        <th>Nom</th>
+        <th>Prénom(s)</th>
+        <th>Date de naissance</th>
+        <th>Lieu de naissance</th>
+        <th>Date de décès</th>
+        <th>Lieu de décès</th>
+        <th colspan="3">Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @soldiers.each do |soldier| %>
+        <tr>
+          <td><%= soldier.lastname %></td>
+          <td><%= soldier.firstname %></td>
+          <td><%= l soldier.date_of_birth %></td>
+          <td><%= soldier.place_of_birth %></td>
+          <td><%= l soldier.date_of_death %></td>
+          <td><%= soldier.place_of_death %></td>
+          <td><%= link_to 'Voir', soldier %></td>
+          <td><%= link_to 'Modifier', edit_soldier_path(soldier) %></td>
+          <td><%= link_to 'Supprimer', soldier, method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <%= link_to 'Nouveau soldat', new_soldier_path %>

@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/tooltip
 //= require turbolinks
+//= require js/bootstrap
+//= require slimScroll/jquery.slimscroll
+//= require js/app
 //= require_tree .
