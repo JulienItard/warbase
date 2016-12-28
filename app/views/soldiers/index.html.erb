@@ -3,8 +3,8 @@
 <% end %>
 
 <% content_for :contentHeader do %>
-  <h2>Soldats <small>index</small></h2>
-  
+  <h2>Soldats &nbsp; <%= link_to 'Nouveau soldat', new_soldier_path, :class => 'btn btn-success' %></h2>
+
   <ol class="breadcrumb">
     <li><a href="#">Accueil</a></li>
     <li><%= link_to 'Soldats', soldiers_path %></li>
@@ -35,13 +35,11 @@
           <td><%= soldier.place_of_birth %></td>
           <td><%= l soldier.date_of_death %></td>
           <td><%= soldier.place_of_death %></td>
-          <td><%= link_to 'Voir', soldier %></td>
-          <td><%= link_to 'Modifier', edit_soldier_path(soldier) %></td>
-          <td><%= link_to 'Supprimer', soldier, method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %></td>
+          <td><%= link_to 'Voir', soldier, { class: 'btn btn-primary btn-sm'} %></td>
+          <td><%= link_to 'Modifier', edit_soldier_path(soldier), { class: 'btn btn-warning btn-sm'} %></td>
+          <td><%= link_to 'Supprimer', soldier, :class => 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Êtes-vous sûr ?'} %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
-
-<%= link_to 'Nouveau soldat', new_soldier_path %>

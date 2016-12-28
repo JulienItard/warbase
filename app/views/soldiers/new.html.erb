@@ -1,5 +1,20 @@
-<h1>Nouveau soldar</h1>
+<% content_for :headTitle do %>
+  Soldats
+<% end %>
 
-<%= render 'form', soldier: @soldier %>
+<% content_for :contentHeader do %>
+  <h2>Nouveau soldat &nbsp; <%= link_to 'Retour', soldiers_path, :class => 'btn btn-default' %></h2>
+  
+  <ol class="breadcrumb">
+    <li><a href="#">Accueil</a></li>
+    <li><%= link_to 'Soldats', soldiers_path %></li>
+    <li class="active">nouveau</li>
+  </ol>
+<% end %>
 
-<%= link_to 'Retour', soldiers_path %>
+<div class="box">
+    <div class="box-body">
+        <%= render 'form', soldier: @soldier %>
+    </div>
+</div>
+

@@ -11,35 +11,45 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :lastname, 'Nom de famille :' %>
-    <%= f.text_field :lastname %>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.label :lastname, 'Nom de famille :' %>
+        <%= f.text_field :lastname, :class => 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :date_of_birth, 'Date de naissance :' %>          
+        <%= f.date_select :date_of_birth, { start_year: 1880, end_year: 1940 }, { :class => 'form-control col-sm-4' } %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :place_of_birth, 'Lieu de naissance :' %>
+        <%= f.text_field :place_of_birth, :class => 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.label :firstname, 'Prénom(s) :' %>
+        <%= f.text_field :firstname, :class => 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :date_of_death, 'Date de décès :' %>
+        <%= f.date_select :date_of_death, { start_year: 1930, end_year: 1950 }, { :class => 'form-control col-sm-4' } %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :place_of_death, 'Lieu de décès :' %>
+        <%= f.text_field :place_of_death, :class => 'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :firstname, 'Prénom(s) :' %>
-    <%= f.text_field :firstname %>
-  </div>
+  
 
-  <div class="field">
-    <%= f.label :date_of_birth, 'Date de naissance :' %>
-    <%= f.date_select :date_of_birth, start_year: 1880, end_year: 1940 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :place_of_birth, 'Lieu de naissance :' %>
-    <%= f.text_field :place_of_birth %>
-  </div>
-
-  <div class="field">
-    <%= f.label :date_of_death, 'Date de décès :' %>
-    <%= f.date_select :date_of_death, start_year: 1930, end_year: 1950 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :place_of_death, 'Lieu de décès :' %>
-    <%= f.text_field :place_of_death %>
-  </div>
+  
 
   <div class="actions">
     <%= f.submit 'Sauvegarder' %>
